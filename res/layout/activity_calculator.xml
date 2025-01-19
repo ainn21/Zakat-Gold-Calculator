@@ -1,0 +1,205 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green"
+    tools:context=".CalculatorActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/calm_green"
+        android:elevation="4dp"
+        android:title="Zakat Calculator"
+        android:titleTextColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="Zakat Calculator"
+        android:textColor="#3F51B5"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <!-- Weight of Gold Input -->
+
+    <TextView
+        android:id="@+id/weightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="44dp"
+        android:text="Weight of Gold (grams):"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTitle" />
+
+    <EditText
+        android:id="@+id/weightInput"
+        android:layout_width="430dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Enter weight"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="#333333"
+        android:textColorHint="#888888"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weightLabel" />
+
+    <TextView
+        android:id="@+id/typeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="12dp"
+        android:text="Gold Type:"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weightInput" />
+
+    <RadioGroup
+        android:id="@+id/typeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/typeLabel">
+
+        <RadioButton
+            android:id="@+id/typeKeep"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:buttonTint="#3F51B5"
+            android:text="Keep"
+            android:textColor="#333333" />
+
+        <RadioButton
+            android:id="@+id/typeWear"
+            android:layout_width="141dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:buttonTint="#3F51B5"
+            android:text="Wear"
+            android:textColor="#333333" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/valueLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="16dp"
+        android:text="Current Gold Value (per gram):"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/typeGroup" />
+
+    <EditText
+        android:id="@+id/valueInput"
+        android:layout_width="430dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Enter value"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="#333333"
+        android:textColorHint="#888888"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/valueLabel" />
+
+    <!-- Calculate and Reset Buttons -->
+
+    <!-- Output Section -->
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="197dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#3F51B5"
+        android:elevation="4dp"
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/resetButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/valueInput" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="197dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF5722"
+        android:elevation="4dp"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/calculateButton"
+        app:layout_constraintTop_toBottomOf="@id/valueInput" />
+
+    <TextView
+        android:id="@+id/totalValueLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="24dp"
+        android:text="Total Gold Value:"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculateButton" />
+
+    <TextView
+        android:id="@+id/zakatPayableLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="20dp"
+        android:text="Zakat Payable Value:"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalValueLabel" />
+
+    <TextView
+        android:id="@+id/totalZakatLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="428dp"
+        android:layout_marginTop="20dp"
+        android:text="Total Zakat (2.5%):"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/zakatPayableLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
